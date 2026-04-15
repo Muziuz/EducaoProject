@@ -1,0 +1,31 @@
+<%-include('includes/head')%>
+
+<body>
+    <%-include('nav-bar')%>
+    <a href="/" class="btn-voltar">⬅️ Voltar</a>
+    
+    <main class="game-container">
+        <div class="game-mascot-area">
+            <img src="/assets/img/EduCão-BocaFechada-Português.png" alt="Mascote EduCão" id="img-educao-portugues">
+        </div>
+        <div id="content-complete-palavras" class="game-content">
+            <div class="progress-info">
+                <span id="progresso-texto">Pergunta 1 de 6</span>
+                <div class="progress-bar-bg">
+                    <div id="progress-fill"></div>
+                </div>
+            </div>
+            <div class="color-challenge">
+                <h2 id="frase"></h2>
+            </div>
+            <p id="resultado-correto"></p>
+            <div id="opcao"></div>
+            <p id="resultado"></p>
+        </div>
+    </main>
+
+    <%-include('includes/footer')%>
+    <script src="/assets/js/colorstheory.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+{
+  "name": "projeto-educao-mvc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "routes.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "css-loader": "^7.1.4",
+    "ejs": "^5.0.1",
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14",
+    "style-loader": "^4.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.29.0",
+    "@babel/preset-env": "^7.29.2",
+    "babel-loader": "^10.1.1",
+    "webpack": "^5.105.4",
+    "webpack-cli": "^7.0.2"
+  }
+}

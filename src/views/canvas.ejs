@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Quadro de Artes</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: sans-serif;
+            background-color: #1e293b; 
+            color: #f3f4f6;
+            padding: 20px;
+        }
+      
+        #telaPintura {
+            background-color: white;
+            border: 4px solid #ff9900; 
+            border-radius: 15px;
+            cursor: crosshair;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+            margin-top: 60px;
+        }
+    
+        .ferramentas {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        button, input {
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+        #btnLimpar {
+            background-color: #ff4c4c;
+            color: white;
+            font-weight: bold;
+        }
+        #btnLimpar:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <a href="/" class="btn-voltar" style="top: 20px;">⬅️ Voltar</a>
+
+    <canvas id="telaPintura" width="600" height="400"></canvas>
+...
+    <div class="ferramentas">
+        <label for="seletorCor">Cor do Pincel:</label>
+        <input type="color" id="seletorCor" value="#000000">
+        
+        <button id="btnLimpar">🗑️ Limpar Tudo</button>
+    </div>
+
+    <script src="assets/js/canva.js"></script>
+</body>
+</html>

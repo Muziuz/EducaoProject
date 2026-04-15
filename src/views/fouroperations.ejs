@@ -1,0 +1,29 @@
+<%-include('includes/head')%>
+
+<body>
+    <%-include('nav-bar')%>
+    <a href="/" class="btn-voltar">⬅️ Voltar</a>
+    
+    <main class="game-container">
+        <div class="game-mascot-area">
+            <img src="/assets/img/EduCão-BocaFechada-Português.jpeg" alt="Mascote EduCão" id="img-educao-matematica">
+        </div>
+        <div id="content-matematica" class="game-content">
+            <div class="progress-info">
+                <span id="progresso-texto">Pergunta 1 de 10</span>
+                <div class="progress-bar-bg">
+                    <div id="progress-fill"></div>
+                </div>
+            </div>
+            <h2 id="pergunta-matematica"></h2>
+            <p id="resultado-correto"></p>
+            <div id="opcoes-respostas"></div>
+            <p id="resultado-feedback"></p>
+        </div>
+    </main>
+
+    <%-include('includes/footer')%>
+    <script src="/assets/js/fouroperations.js"></script>
+</body>
+
+</html>
