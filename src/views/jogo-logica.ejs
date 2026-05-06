@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Desafio do EduCão - Lógica</title>
+    <link rel="stylesheet" href="/css/game.css">
+</head>
+<body>
+    <header>
+        <h1>Fase: <%= nivel.nome %></h1>
+        <p>Objetivo: <%= nivel.missao %></p>
+    </header>
+
+    <main id="game-container">
+        <div id="grid-map"></div>
+
+        <aside id="controls">
+            <h3>Comandos</h3>
+            <textarea id="command-input" placeholder="Ex: andar(); virar();"></textarea>
+            <button onclick="executarLogica()">Executar!</button>
+        </aside>
+    </main>
+
+    <script>
+        const mapaInicial = <%- JSON.stringify(nivel.mapa) %>;
+    </script>
+    <script src="assets/js/game-engine.js"></script>
+</body>
+</html>
