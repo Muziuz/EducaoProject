@@ -1,3 +1,3 @@
 exports.index = (req, res) => {
-  res.render("jogo-logica");
+    res.render('quiz');
 };

@@ -1,28 +1,41 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <title>Desafio do EduCão - Lógica</title>
-    <link rel="stylesheet" href="/css/game.css">
-</head>
+<%- include('includes/head') %>
+<link rel="stylesheet" href="/assets/css/logicgame.css">
 <body>
-    <header>
-        <h1>Fase: <%= nivel.nome %></h1>
-        <p>Objetivo: <%= nivel.missao %></p>
-    </header>
+    <%- include('nav-bar') %>
+    <a href="/" class="btn-voltar">⬅️ Voltar</a>
 
-    <main id="game-container">
-        <div id="grid-map"></div>
+    <main class="game-container">
+        <!-- Lado Esquerdo: Mascote e Animações -->
+        <div class="game-mascot-area">
+            <img src="/assets/img/Normal.png" alt="Mascote EduCão" id="img-educao-logica">
+        </div>
 
-        <aside id="controls">
-            <h3>Comandos</h3>
-            <textarea id="command-input" placeholder="Ex: andar(); virar();"></textarea>
-            <button onclick="executarLogica()">Executar!</button>
-        </aside>
+        <!-- Lado Direito: Conteúdo do Jogo -->
+        <div class="game-content">
+            <h1 class="display-5 fw-bold text-warning mb-3">Aventuras do Educão 🐶</h1>
+            
+            <div class="progress-info mx-auto">
+                <span id="progresso-texto" class="text-light">Fase 1 de 5</span>
+                <div class="progress-bar-bg">
+                    <div id="progress-fill"></div>
+                </div>
+            </div>
+
+            <div id="mensagem" class="my-3 text-light fw-bold">Escreva os comandos para pegar o osso!</div>
+
+            <div id="tabuleiro"></div>
+
+            <div id="controles" style="width: 100%; max-width: 400px;">
+                <p class="text-light small mb-2">💡 Dica para experts: use <b>repetir(3, andar(1))</b></p>
+                <textarea id="codigo" class="form-control mb-3" placeholder="Ex:&#10;repetir(3, andar(1))&#10;virar('Sul')&#10;pular()"></textarea>
+                <button class="btn-resposta w-100" onclick="lerEExecutar()">Executar Código</button>
+            </div>
+            
+            <p id="resultado" class="mt-3"></p>
+        </div>
     </main>
 
-    <script>
-        const mapaInicial = <%- JSON.stringify(nivel.mapa) %>;
-    </script>
-    <script src="assets/js/game-engine.js"></script>
+    <%- include('includes/footer') %>
+    <script src="/assets/js/logicgame.js"></script>
 </body>
 </html>

@@ -1,31 +1,45 @@
-<%-include('includes/head')%>
-
+<%- include('includes/head') %>
 <body>
-    <%-include('nav-bar')%>
+    <%- include('nav-bar') %>
     <a href="/" class="btn-voltar">⬅️ Voltar</a>
     
     <main class="game-container">
         <div class="game-mascot-area">
-            <img src="/assets/img/EduCão-BocaFechada-Português.png" alt="Mascote EduCão" id="img-educao-portugues">
+            <img src="/assets/img/Normal.png" alt="Mascote EduCão" id="img-educao-portugues">
         </div>
-        <div id="content-complete-palavras" class="game-content">
-            <div class="progress-info">
-                <span id="progresso-texto">Pergunta 1 de 6</span>
-                <div class="progress-bar-bg">
-                    <div id="progress-fill"></div>
+
+        <div class="game-content">
+            <!-- Seletor de Nível -->
+            <div id="seletor-nivel">
+                <h1 class="display-5 fw-bold text-warning mb-4">Teoria das Cores 🎨</h1>
+                <h3 class="text-light mb-4">Escolha seu nível:</h3>
+                <div class="d-grid gap-3 mx-auto" style="max-width: 300px;">
+                    <button class="btn-resposta w-100" onclick="iniciarJogo('facil')">🌱 6-8 Anos</button>
+                    <button class="btn-resposta w-100" onclick="iniciarJogo('medio')">🚀 8-10 Anos</button>
+                    <button class="btn-resposta w-100" onclick="iniciarJogo('dificil')">🧠 10-12 Anos</button>
                 </div>
             </div>
-            <div class="color-challenge">
-                <h2 id="frase"></h2>
+
+            <!-- Área do Jogo -->
+            <div id="area-jogo" style="display: none; width: 100%;">
+                <div class="progress-info mx-auto">
+                    <span id="progresso-texto" class="text-light">Pergunta 1 de 6</span>
+                    <div class="progress-bar-bg">
+                        <div id="progress-fill"></div>
+                    </div>
+                </div>
+                <div class="color-challenge mt-4">
+                    <h2 id="frase" class="mb-4"></h2>
+                </div>
+                <div id="opcao" class="d-flex flex-wrap justify-content-center gap-3"></div>
+                <p id="resultado" class="mt-4 fs-3"></p>
+                <p id="resultado-correto" class="text-light fs-5"></p>
+                <button class="btn btn-outline-warning btn-sm mt-3" onclick="location.reload()">Mudar Nível</button>
             </div>
-            <p id="resultado-correto"></p>
-            <div id="opcao"></div>
-            <p id="resultado"></p>
         </div>
     </main>
 
-    <%-include('includes/footer')%>
+    <%- include('includes/footer') %>
     <script src="/assets/js/colorstheory.js"></script>
 </body>
-
 </html>

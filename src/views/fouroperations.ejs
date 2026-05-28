@@ -1,29 +1,49 @@
-<%-include('includes/head')%>
-
+<%- include('includes/head') %>
+<link rel="stylesheet" href="/assets/css/fouroperations.css">
 <body>
-    <%-include('nav-bar')%>
+    <%- include('nav-bar') %>
     <a href="/" class="btn-voltar">⬅️ Voltar</a>
-    
+
     <main class="game-container">
+        <!-- Lado Esquerdo: Mascote e Animações -->
         <div class="game-mascot-area">
-            <img src="/assets/img/EduCão-BocaFechada-Português.jpeg" alt="Mascote EduCão" id="img-educao-matematica">
+            <img src="/assets/img/Normal.png" alt="Mascote EduCão" id="img-educao-matematica">
         </div>
-        <div id="content-matematica" class="game-content">
-            <div class="progress-info">
-                <span id="progresso-texto">Pergunta 1 de 10</span>
-                <div class="progress-bar-bg">
-                    <div id="progress-fill"></div>
+
+        <!-- Lado Direito: Conteúdo do Jogo -->
+        <div class="game-content">
+            <div id="seletor-nivel">
+                <h1 class="display-5 fw-bold text-warning mb-4">Desafio Matemático 🧮</h1>
+                <h3 class="text-light mb-4">Escolha seu nível:</h3>
+                <div class="d-grid gap-3 mx-auto" style="max-width: 300px;">
+                    <button class="btn-resposta w-100" onclick="iniciarJogo('facil')">🌱 6-8 Anos</button>
+                    <button class="btn-resposta w-100" onclick="iniciarJogo('medio')">🚀 8-10 Anos</button>
+                    <button class="btn-resposta w-100" onclick="iniciarJogo('dificil')">🧠 10-12 Anos</button>
                 </div>
             </div>
-            <h2 id="pergunta-matematica"></h2>
-            <p id="resultado-correto"></p>
-            <div id="opcoes-respostas"></div>
-            <p id="resultado-feedback"></p>
+
+            <div id="area-jogo" style="display: none; width: 100%;">
+                <div class="progress-info mx-auto">
+                    <span id="progresso-texto" class="text-light">Acertos: 0</span>
+                    <div class="progress-bar-bg">
+                        <div id="progress-fill"></div>
+                    </div>
+                </div>
+
+                <div class="challenge-box mt-4">
+                    <h2 id="questao" class="display-2 fw-bold text-white mb-4"></h2>
+                    <div id="opcoes" class="d-flex flex-wrap justify-content-center gap-3"></div>
+                </div>
+
+                <p id="resultado" class="mt-4 fs-3"></p>
+                <p id="resultado-correto" class="text-light fs-5"></p>
+                
+                <button class="btn btn-outline-warning btn-sm mt-3" onclick="location.reload()">Mudar Nível</button>
+            </div>
         </div>
     </main>
 
-    <%-include('includes/footer')%>
+    <%- include('includes/footer') %>
     <script src="/assets/js/fouroperations.js"></script>
 </body>
-
 </html>

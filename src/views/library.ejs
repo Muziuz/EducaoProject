@@ -1,22 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('includes/head') %>
     <link rel="stylesheet" href="/assets/css/library.css">
-    <title>Acervo de Livros</title>
+    <title>EduCão - Biblioteca Mágica</title>
 </head>
-
 <body>
-    <a href="/" class="btn-voltar">⬅️ Voltar</a>
-    <div id="livros-container" class="grid-livros">
-        
+    <%- include('nav-bar') %>
+
+    <div class="container my-5">
+        <!-- Parte Superior: Título e Busca -->
+        <div class="header-biblioteca text-center">
+            <h1 class="display-4 fw-bold text-warning mb-3">Biblioteca Mágica 📚</h1>
+            <p class="lead text-light mb-4">Descubra mundos incríveis com nossos livros gratuitos!</p>
+            
+            <div class="busca-container mx-auto" style="max-width: 600px;">
+                <div class="input-group input-group-lg">
+                    <input type="text" id="input-busca" class="form-control" placeholder="Qual aventura você busca hoje?" onkeyup="buscar()">
+                    <button class="btn btn-warning text-white fw-bold px-4" type="button" onclick="buscar()">🔍 Buscar</button>
+                </div>
+            </div>
+
+            <div class="categorias-container mt-4 d-flex justify-content-center flex-wrap gap-2">
+                <button class="btn btn-outline-info rounded-pill px-4" onclick="carregarLivros('Children\'s Literature')">👶 Infantil</button>
+                <button class="btn btn-outline-success rounded-pill px-4" onclick="carregarLivros('Fairy tales')">🧚 Contos de Fadas</button>
+                <button class="btn btn-outline-primary rounded-pill px-4" onclick="carregarLivros('Adventure and adventurers')">⚔️ Aventura</button>
+                <button class="btn btn-outline-danger rounded-pill px-4" onclick="carregarLivros('Animals')">🦁 Animais</button>
+                <button class="btn btn-outline-warning rounded-pill px-4" onclick="carregarLivros('')">✨ Ver Tudo</button>
+            </div>
+        </div>
+
+        <!-- Parte Inferior: Livros (O CSS garante que fique abaixo) -->
+        <div id="livros-container" class="grid-livros mt-5">
+            <!-- Os livros serão carregados aqui via JS -->
+        </div>
     </div>
 
-
-
+    <%- include('includes/footer') %>
     <script src="/assets/js/library.js"></script>
 </body>
-
 </html>

@@ -1,0 +1,97 @@
+[
+  {
+    "title": "Dom Casmurro",
+    "authors": [{ "name": "Machado de Assis" }],
+    "formats": {
+      "image/jpeg": "/assets/img/capas-de-livros/DomCasmurro.jpeg",
+      "text/html": "https://www.gutenberg.org/cache/epub/55752/pg55752-images.html"
+    },
+    "subjects": ["Clássico", "Literatura Brasileira"]
+  },
+  {
+    "title": "Memórias Póstumas de Brás Cubas",
+    "authors": [{ "name": "Machado de Assis" }],
+    "formats": {
+      "image/jpeg": "/assets/img/capas-de-livros/memoriaspostulas.jpg",
+      "text/html": "https://www.gutenberg.org/cache/epub/54829/pg54829-images.html"
+    },
+    "subjects": ["Clássico", "Literatura Brasileira"]
+  },
+
+  {
+    "title": "Viagem ao Céu",
+    "authors": [{ "name": "Monteiro Lobato" }],
+    "formats": {
+      "image/jpeg": "https://books.google.com/books/content?id=p-0nEAAAQBAJ&printsec=frontcover&img=1&zoom=1",
+      "text/html": "https://jorgeteles.com.br/site/monteiro-lobato-viagem-ao-ceu-2/"
+    },
+    "subjects": ["Children's Literature", "Infantil", "Aventura"]
+  },
+  {
+    "title": "Poesias Infantis",
+    "authors": [{ "name": "Olavo Bilac" }],
+    "formats": {
+      "image/jpeg": "https://books.google.com/books/content?id=H_pRAAAAYAAJ&printsec=frontcover&img=1&zoom=1",
+      "text/html": "https://literaturabrasileira.ufsc.br/documentos/?action=download&id=31240"
+    },
+    "subjects": ["Children's Literature", "Infantil", "Poesia"]
+  },
+  {
+    "title": "Contos da Carochinha",
+    "authors": [{ "name": "Figueiredo Pimentel" }],
+    "formats": {
+      "image/jpeg": "https://books.google.com/books/content?id=TfBIAAAAYAAJ&printsec=frontcover&img=1&zoom=1",
+      "text/html": "https://literaturabrasileira.ufsc.br/documentos/?action=download&id=152303"
+    },
+    "subjects": ["Children's Literature", "Infantil", "Fairy tales"]
+  },
+  {
+    "title": "Alice no País das Maravilhas",
+    "authors": [{ "name": "Lewis Carroll" }],
+    "formats": {
+      "image/jpeg": "/assets/img/capas-de-livros/aliceNoPaisDasMaravilhas.jpeg",
+      "text/html": "https://online.fliphtml5.com/uwvpx/pygo/#p=1"
+    },
+    "subjects": [
+      "Children's Literature",
+      "Infantil",
+      "Adventure and adventurers"
+    ]
+  },
+  {
+    "title": "Vinte Mil Léguas Submarinas",
+    "authors": [{ "name": "Júlio Verne" }],
+    "formats": {
+      "image/jpeg": "/assets/img/capas-de-livros/milleguas.jpeg",
+      "text/html": "https://online.fliphtml5.com/uwvpx/xxjo/#p=1"
+    },
+    "subjects": ["Infantil", "Adventure and adventurers", "Juvenil"]
+  },
+  {
+    "title": "Chapeuzinho Vermelho",
+    "authors": [{ "name": "Irmãos Grimm" }],
+    "formats": {
+      "image/jpeg": "/assets/img/capas-de-livros/chapeuzinhovermelho.jpeg",
+      "text/html": "https://online.fliphtml5.com/tlcm/rowp/#p=1"
+    },
+    "subjects": ["Children's Literature", "Infantil", "Fairy tales"]
+  },
+  {
+    "title": "João e Maria",
+    "authors": [{ "name": "Irmãos Grimm" }],
+    "formats": {
+      "image/jpeg": "/assets/img/capas-de-livros/joaoeMaria.jpeg",
+      "text/html": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://alfabetizacao.mec.gov.br/images/conta-pra-mim/livros/versao_digital/joao_e_maria_versao_digital.pdf&ved=2ahUKEwjaxa7F3tqUAxX_qZUCHUZUHLgQFnoECBsQAQ&usg=AOvVaw13zREMNHMWxi5-4MWIIJ7_"
+    },
+    "subjects": ["Children's Literature", "Infantil", "Fairy tales"]
+  },
+  {
+    "title": "O mágico de Oz",
+    "authors": [{ "name": "Oscar Wilde" }],
+    "formats": {
+      "image/jpeg": "/assets/img/capas-de-livros/magicoDeOz.jpeg",
+      "text/html": "https://online.fliphtml5.com/uoois/jqea/#p=1"
+    },
+    "subjects": ["Juvenil", "Adventure and adventurers"]
+  }
+]

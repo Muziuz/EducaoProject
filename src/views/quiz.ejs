@@ -1,22 +1,25 @@
 <%- include('includes/head') %>
+<link rel="stylesheet" href="/assets/css/quiz.css">
 <body>
     <%- include('nav-bar') %>
     <a href="/" class="btn-voltar">⬅️ Voltar</a>
     
     <main class="game-container">
+        <!-- Lado Esquerdo: Mascote e Animações -->
         <div class="game-mascot-area">
-            <img src="/assets/img/Normal.png" alt="Mascote EduCão" id="img-educao-portugues">
+            <img src="/assets/img/Normal.png" alt="Mascote EduCão" id="img-educao-quiz">
         </div>
 
+        <!-- Lado Direito: Conteúdo do Jogo -->
         <div class="game-content">
             <!-- Seletor de Nível -->
             <div id="seletor-nivel">
-                <h1 class="display-5 fw-bold text-warning mb-4">Complete as Palavras ✍️</h1>
-                <h3 class="text-light mb-4">Escolha seu nível:</h3>
+                <h1 class="display-5 fw-bold text-warning mb-4">Super Quiz 🧠</h1>
+                <h3 class="text-light mb-4">Escolha seu nível de desafio:</h3>
                 <div class="d-grid gap-3 mx-auto" style="max-width: 300px;">
-                    <button class="btn-resposta w-100" onclick="iniciarJogo('facil')">🌱 6-8 Anos</button>
-                    <button class="btn-resposta w-100" onclick="iniciarJogo('medio')">🚀 8-10 Anos</button>
-                    <button class="btn-resposta w-100" onclick="iniciarJogo('dificil')">🧠 10-12 Anos</button>
+                    <button class="btn-resposta w-100" onclick="iniciarJogo('facil')">🌱 6-8 Anos<br><small>Básico e Divertido</small></button>
+                    <button class="btn-resposta w-100" onclick="iniciarJogo('medio')">🚀 8-10 Anos<br><small>Curiosidades e Ciência</small></button>
+                    <button class="btn-resposta w-100" onclick="iniciarJogo('dificil')">🧠 10-12 Anos<br><small>História e Mundo</small></button>
                 </div>
             </div>
 
@@ -28,16 +31,21 @@
                         <div id="progress-fill"></div>
                     </div>
                 </div>
-                <h2 id="frase" class="mb-4 text-white"></h2>
-                <div id="opcao" class="d-flex flex-wrap justify-content-center gap-3"></div>
+
+                <div class="challenge-box mt-4 mx-auto">
+                    <h2 id="pergunta" class="fs-3 fw-bold text-white mb-4"></h2>
+                    <div id="opcoes" class="d-grid gap-3"></div>
+                </div>
+
                 <p id="resultado" class="mt-4 fs-3"></p>
                 <p id="resultado-correto" class="text-light fs-5"></p>
+                
                 <button class="btn btn-outline-warning btn-sm mt-3" onclick="location.reload()">Mudar Nível</button>
             </div>
         </div>
     </main>
 
     <%- include('includes/footer') %>
-    <script src="/assets/js/wordcompletion.js"></script>
+    <script src="/assets/js/quiz.js"></script>
 </body>
 </html>

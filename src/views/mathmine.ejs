@@ -1,0 +1,46 @@
+<%- include('includes/head') %>
+<link rel="stylesheet" href="/assets/css/mathmine.css">
+<body>
+    <%- include('nav-bar') %>
+    
+    <main class="game-container">
+        <div class="game-header">
+            <h1 class="text-warning">Caminho Matemático 🧭</h1>
+            <p>Resolva a conta e clique no vizinho com a resposta certa!</p>
+        </div>
+
+        <div id="game-ui">
+            <div class="question-display" id="question-box">Iniciando...</div>
+            
+            <div class="grid-wrapper">
+                <div class="math-grid" id="math-grid">
+                    <!-- Gerado por JS -->
+                </div>
+            </div>
+            
+            <div class="mt-4 text-center">
+                <p class="fs-5">Progresso: <span id="progress-val">0</span> / 15</p>
+                <button class="btn btn-outline-warning btn-sm" onclick="initGame()">Reiniciar Mapa</button>
+            </div>
+        </div>
+
+        <!-- Telas de fim de jogo -->
+        <div id="game-over" class="overlay hidden">
+            <h1 class="display-1 text-danger">ERROU! 💥</h1>
+            <p class="fs-3">O caminho foi bloqueado!</p>
+            <button class="btn btn-warning btn-lg mt-4" onclick="initGame()">Tentar Novamente</button>
+            <a href="/" class="btn btn-outline-light mt-3">Sair</a>
+        </div>
+
+        <div id="game-win" class="overlay hidden">
+            <h1 class="display-1 text-success">VENCEU! 🏆</h1>
+            <p class="fs-3">Você completou o caminho matemático!</p>
+            <button class="btn btn-success btn-lg mt-4" onclick="initGame()">Jogar de Novo</button>
+            <a href="/" class="btn btn-outline-light mt-3">Sair</a>
+        </div>
+    </main>
+
+    <%- include('includes/footer') %>
+    <script src="/assets/js/mathmine.js"></script>
+</body>
+</html>

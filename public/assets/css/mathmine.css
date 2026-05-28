@@ -1,0 +1,104 @@
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #1a1a2e;
+    min-height: 90vh;
+    color: white;
+}
+
+.grid-wrapper {
+    position: relative;
+    padding: 10px;
+    background: #16213e;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+.math-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 60px);
+    grid-template-rows: repeat(6, 60px);
+    gap: 5px;
+}
+
+.grid-cell {
+    width: 60px;
+    height: 60px;
+    background-color: #0f3460;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 2px solid transparent;
+}
+
+.grid-cell.active {
+    background-color: #e94560;
+    box-shadow: 0 0 15px #e94560;
+    z-index: 2;
+}
+
+.grid-cell.cleared {
+    background-color: #1a1a2e;
+    color: #444;
+    cursor: default;
+    border: 1px dashed #333;
+}
+
+.grid-cell.neighbor {
+    border: 2px solid #facc15;
+}
+
+.grid-cell.neighbor:hover {
+    background-color: #533483;
+}
+
+.question-display {
+    background: #e94560;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(233, 69, 96, 0.4);
+}
+
+.game-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.hidden { display: none !important; }
+
+@media (max-width: 500px) {
+    .math-grid {
+        grid-template-columns: repeat(6, 50px);
+        grid-template-rows: repeat(6, 50px);
+    }
+    .grid-cell {
+        width: 50px;
+        height: 50px;
+        font-size: 0.8rem;
+    }
+}
