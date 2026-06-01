@@ -1,0 +1,31 @@
+.challenge-box {
+    background: rgba(15, 23, 42, 0.8);
+    padding: 30px;
+    border-radius: 20px;
+    border: 2px solid #334155;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 500px;
+}
+
+#pergunta {
+    text-shadow: 1px 1px 2px #000;
+    line-height: 1.4;
+}
+
+.correto {
+    color: var(--VerdeSucesso) !important;
+    font-weight: bold;
+    animation: pop 0.5s ease;
+}
+
+.incorreto {
+    color: var(--VermelhoNegacao) !important;
+    font-weight: bold;
+}
+
+@keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
