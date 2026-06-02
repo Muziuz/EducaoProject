@@ -11,6 +11,7 @@ app.set("view engine", "ejs");
 
 app.use(routes);
 
-app.listen(3000, () => {
-  console.log("Servidor rodando em http://localhost:3000");
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Servidor rodando em http://localhost:${port}`);
 });
