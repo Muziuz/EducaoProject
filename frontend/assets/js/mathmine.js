@@ -13,9 +13,6 @@ const progressEl = document.getElementById('progress-val');
 const winScreen = document.getElementById('game-win');
 const loseScreen = document.getElementById('game-over');
 
-const somAcerto = new Audio('/assets/audio/acerto.mp3');
-const somErro = new Audio('/assets/audio/erro.mp3');
-
 function initGame() {
     progress = 0;
     currentPos = { x: 0, y: 0 };
@@ -124,7 +121,6 @@ function handleCellClick(x, y) {
 
     if (grid[y][x].val === correctAnswer) {
         // Acertou
-        somAcerto.play().catch(() => {});
         grid[currentPos.y][currentPos.x].cleared = true;
         grid[currentPos.y][currentPos.x].element.classList.add('cleared');
         grid[currentPos.y][currentPos.x].element.innerText = '';
@@ -140,7 +136,6 @@ function handleCellClick(x, y) {
         }
     } else {
         // Errou
-        somErro.play().catch(() => {});
         loseScreen.classList.remove('hidden');
     }
 }

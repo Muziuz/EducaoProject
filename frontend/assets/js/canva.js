@@ -160,7 +160,15 @@ function obterPosicao(e) {
     const rect = canvas.getBoundingClientRect();
     const clientX = e.touches ? e.touches[0].clientX : e.clientX;
     const clientY = e.touches ? e.touches[0].clientY : e.clientY;
-    return { x: Math.round(clientX - rect.left), y: Math.round(clientY - rect.top) };
+    
+    // Calcula a escala entre o tamanho interno (canvas.width) e o tamanho exibido (rect.width)
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+    
+    return { 
+        x: Math.round((clientX - rect.left) * scaleX), 
+        y: Math.round((clientY - rect.top) * scaleY) 
+    };
 }
 
 canvas.addEventListener('mousedown', (e) => {
@@ -177,6 +185,21 @@ canvas.addEventListener('mousedown', (e) => {
     }
 });
 
+canvas.addEventListener('touchstart', (e) => {
+    e.preventDefault();
+    const pos = obterPosicao(e);
+    if (modoBalde) {
+        floodFill(pos.x, pos.y, hexToRgb(corAtual));
+        if (imgEducao) imgEducao.src = "/assets/img/Feliz.png";
+        setTimeout(() => imgEducao.src = "/assets/img/Normal.png", 1000);
+    } else {
+        desenhando = true;
+        ctx.beginPath();
+        ctx.moveTo(pos.x, pos.y);
+        if (imgEducao) imgEducao.src = "/assets/img/Feliz.png";
+    }
+}, { passive: false });
+
 canvas.addEventListener('mousemove', (e) => {
     if (!desenhando || modoBalde) return;
     const pos = obterPosicao(e);
@@ -184,9 +207,18 @@ canvas.addEventListener('mousemove', (e) => {
     ctx.stroke();
 });
 
+canvas.addEventListener('touchmove', (e) => {
+    e.preventDefault();
+    if (!desenhando || modoBalde) return;
+    const pos = obterPosicao(e);
+    ctx.lineTo(pos.x, pos.y);
+    ctx.stroke();
+}, { passive: false });
+
 const parar = () => { desenhando = false; if (imgEducao && !missaoAtiva) imgEducao.src = "/assets/img/Normal.png"; };
 canvas.addEventListener('mouseup', parar);
 canvas.addEventListener('mouseout', parar);
+canvas.addEventListener('touchend', parar);
 
 // Ferramentas
 document.querySelectorAll('.color-swatch').forEach(swatch => {
